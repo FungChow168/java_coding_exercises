@@ -2,12 +2,21 @@ package com.techreturners.exercise003;
 
 public class Exercise003 {
 
+    private String[] iceCreamFlavours = {"Pistachio", "Raspberry Ripple", "Vanilla", "Mint Chocolate Chip",
+                                         "Chocolate", "Mango Sorbet"};
+
     int getIceCreamCode(String iceCreamFlavour) {
-        throw new UnsupportedOperationException(("You can delete this statement and add your code here."));
+        int result = 10;
+        for (int i=0; i < iceCreamFlavours.length; i++)
+            if (iceCreamFlavours[i].equalsIgnoreCase(iceCreamFlavour)) {
+                result = i;
+                break;
+            }
+        return result;
     }
 
     String[] iceCreamFlavours() {
-        throw new UnsupportedOperationException(("You can delete this statement and add your code here."));
+        return iceCreamFlavours;
     }
 
 }
