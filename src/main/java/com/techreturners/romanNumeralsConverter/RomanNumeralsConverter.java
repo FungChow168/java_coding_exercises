@@ -1,8 +1,9 @@
 package com.techreturners.romanNumeralsConverter;
 
-import java.util.Dictionary;
-import java.util.Hashtable;
-import java.util.Enumeration;
+//import java.util.Dictionary;
+//import java.util.Hashtable;
+//import java.util.Enumeration;
+import java.util.*;
 
 public class RomanNumeralsConverter {
 
@@ -40,6 +41,14 @@ public class RomanNumeralsConverter {
             previousValue = currentValue;
         }
         return total;
+    }
+
+    public void conversionConsole (){
+        Scanner userInput = new Scanner(System.in);
+        System.out.print("Please input a roman numeral in the range of 1 to 3999 : ");
+        String romanNumeral = userInput.nextLine();
+        System.out.println(convertRomanNumeralToNumber(romanNumeral));
+
     }
 
 }
