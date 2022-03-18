@@ -36,7 +36,7 @@ public class Exercise001Test {
         Exercise001 ex001 = new Exercise001();
         assertEquals(120, ex001.addVat(100, 20), 0.0);
         assertEquals(47, ex001.addVat(40, 17.5), 0.0);
-        assertEquals(39.36, ex001.addVat(33.5, 17.5), 0.0);
+        assertEquals(39.36, ex001.addVat(33.5, 17.5), 0.01);
         assertEquals(25, ex001.addVat(25, 0), 0.0);
     }
 
