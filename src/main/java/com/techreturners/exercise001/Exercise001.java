@@ -4,14 +4,18 @@ import java.util.List;
 import java.lang.StringBuilder;
 
 public class Exercise001 {
+    public String getFirstLetterInUppercase(String word){
+        return word.substring(0,1).toUpperCase();
+    }
+
     public String capitalizeWord(String word) {
         // Add your code here
-        return word.substring(0,1).toUpperCase() + word.substring(1).toLowerCase();
+        return getFirstLetterInUppercase(word) + word.substring(1).toLowerCase();
     }
 
     public String generateInitials(String firstName, String lastName) {
         // Add your code here
-        return firstName.substring(0,1).toUpperCase() + "." + lastName.substring(0,1).toUpperCase();
+        return getFirstLetterInUppercase(firstName) + "." + getFirstLetterInUppercase(lastName);
     }
 
     public double addVat(double originalPrice, double vatRate) {
