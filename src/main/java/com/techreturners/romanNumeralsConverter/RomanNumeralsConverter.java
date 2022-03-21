@@ -1,26 +1,20 @@
 package com.techreturners.romanNumeralsConverter;
 
-//import java.util.Dictionary;
-//import java.util.Hashtable;
-//import java.util.Enumeration;
 import java.util.*;
+
 
 public class RomanNumeralsConverter {
 
-    private Dictionary conversionTable = new Hashtable();
+    private Dictionary <Character, Integer> conversionTable = new Hashtable <Character, Integer>(){{put('I', 1);
+                                                                                                    put('V', 5);
+                                                                                                    put('X', 10);
+                                                                                                    put('L', 50);
+                                                                                                    put('C', 100);
+                                                                                                    put('D', 500);
+                                                                                                    put('M', 1000);
+                                                                                                }};
 
     public RomanNumeralsConverter() {
-        this.initConversionTable();
-    }
-
-    private void initConversionTable(){
-        conversionTable.put('I', 1);
-        conversionTable.put('V', 5);
-        conversionTable.put('X', 10);
-        conversionTable.put('L', 50);
-        conversionTable.put('C', 100);
-        conversionTable.put('D', 500);
-        conversionTable.put('M', 1000);
     }
 
 //    I haven't done any validation check
@@ -33,7 +27,7 @@ public class RomanNumeralsConverter {
         int currentValue = 0;
         int total = 0;
         for (int i = romanNumeral.length() -1; i >= 0; i--) {
-            currentValue = (int) conversionTable.get(romanNumeral.charAt(i));
+            currentValue = conversionTable.get(romanNumeral.charAt(i));
             if (currentValue >= previousValue)
                 total += currentValue;
             else
